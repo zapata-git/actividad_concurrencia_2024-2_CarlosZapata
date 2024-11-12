@@ -1,7 +1,7 @@
 
 # Threads API
 
-> **Original**: Los siguientes codigos son tomados del directiorio [r/threads-api](https://github.com/remzi-arpacidusseau/ostep-code/tree/master/threads-api) del [repositorio](https://github.com/remzi-arpacidusseau/ostep-code/tree/master) de ejemplos del libro de Remzi.
+> **Original**: Los siguientes codigos son tomados del directiorio [threads-api](https://github.com/remzi-arpacidusseau/ostep-code/tree/master/threads-api) del [repositorio](https://github.com/remzi-arpacidusseau/ostep-code/tree/master) de ejemplos del libro de Remzi.
 
 Para comprender estos ejemplos, se recomienda que consulte el capitulo **Interlude: Thread API** ([link](https://pages.cs.wisc.edu/~remzi/OSTEP/threads-api.pdf)) el cual explica el API POSIX para hilos y los ejemplos que se adjuntan para el caso.
 
