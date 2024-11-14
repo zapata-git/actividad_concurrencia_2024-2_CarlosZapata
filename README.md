@@ -2,10 +2,10 @@
 
 ### Introducción
 
-A continuación, se toman algunos ejemplos de concurrencia del libro de Remzi ([ostep-code](https://github.com/remzi-arpacidusseau/ostep-code/tree/master)). Mas exactamente se descargaron los ejemplos de los siguientes directorios:
-* [threads-intro](https://github.com/remzi-arpacidusseau/ostep-code/tree/master/threads-intro)
-* [threads-api](https://github.com/remzi-arpacidusseau/ostep-code/tree/master/threads-api)
-* [threads-cv](https://github.com/remzi-arpacidusseau/ostep-code/tree/master/threads-cv)
+A continuación, se toman algunos ejemplos de concurrencia del libro de Remzi ([ostep-code](https://github.com/remzi-arpacidusseau/ostep-code/tree/master)). Mas exactamente, se descargaron los ejemplos en los siguientes directorios:
+* [threads-intro](./threads-intro/)
+* [threads-api](./threads-api/)
+* [threads-cv](./threads-cv/)
 
 ### Actividad
 
