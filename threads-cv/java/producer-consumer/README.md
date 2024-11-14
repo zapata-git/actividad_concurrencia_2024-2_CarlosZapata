@@ -1,6 +1,6 @@
-# Implementación en Go
+# Implementación en Java
 
-Los ejemplos que se implementaron son los que se encuentran en la sección [threads-api](../../threads-api/)
+Los ejemplos que se implementaron son los que se encuentran en la sección [producer-consumer](../../../threads-cv/c/producer-consumer/)
 
 ## Referencias principales
 
@@ -9,9 +9,8 @@ Coloque aqui las paginas donde encontro los ejemplos que mas le sirvieron para a
 ## Ejemplos
 
 Los códigos a reimplementar:
-- [ ] `thread_create.c`
-- [ ] `thread_create_simple_args.c`
-- [ ] `thread_create_with_return_args.c`
+- [ ] `pc_single_cv.c`
+- [ ] `pc.c`
 
 ## Codigos
 
