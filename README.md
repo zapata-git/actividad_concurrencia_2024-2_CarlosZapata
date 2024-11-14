@@ -1,14 +1,29 @@
 # Actividad de concurrencia
 
-Los siguientes ejemplos son tomados del los ejemplos del libro de Remzi ([ostep-code](https://github.com/remzi-arpacidusseau/ostep-code/tree/master)). 
+### Introducción
 
-|Ejemplo|Lenguaje|Implementacion|Implementación|
-|---|---|---|---|    
-|threads-api|C|[ejemplos](./threads-api/c/)|x|
-|threads-api|C++|./threads-api/c++/)||
-|threads-api|Java|./threads-api/java/)||
-|threads-api|Python|./threads-api/python/)||
-|threads-api|Go|./threads-api/go/)||
-|threads-api|Rust|./threads-api/rust/)||
+A continuación, se toman algunos ejemplos de concurrencia del libro de Remzi ([ostep-code](https://github.com/remzi-arpacidusseau/ostep-code/tree/master)). Mas exactamente se descargaron los ejemplos de los siguientes directorios:
+* [threads-intro](https://github.com/remzi-arpacidusseau/ostep-code/tree/master/threads-intro)
+* [threads-api](https://github.com/remzi-arpacidusseau/ostep-code/tree/master/threads-api)
+* [threads-cv](https://github.com/remzi-arpacidusseau/ostep-code/tree/master/threads-cv)
 
-Como actividad se pide que reimplemente cada uno de los ejemplos, implementados en lenguaje C, del repo ([link](./threads-api/c)) En alguno de los demas lenguajes que se muestran en la tabla. **Importante**: Es libre de explorar cualquier lenguaje, si no aparece en la lista cree una carpeta con el nombre de los ejemplos y reescribalos en el lenguaje elegido.
+### Actividad
+
+Implementar en lenguaje de programación C++, Python, Java, Go, Rust o cualquiera de su gusto; los ejemplos de las secciones previas (originalmente codificados en C). Para lo cual siga los siguientes resultados:
+1. Haga un fork de este repositorio.
+2. Elija el ejemplo e implementelo en el lenguaje elegido (siempre y cuando no este implementado previamente).
+3. Capture las imagenes que demuestren que este funciona teniendo una salida similar a la versión original implementada en C.
+4. Agregar al directorio, correspondiente al lenguaje de programación, del repositorio el codigo y las imagenes debidamente nombradas.
+5. Modificar el README.md de este directorio para que haga referencia la codigo.
+6. Actualice el inventario del ejemplos implementados.
+7. Haga el push a su repositorio.
+8. Realice el pull Request.
+
+### Puntuación
+
+1. Bonus de 0.3 por código implementado en python, java que son lenguajes manejados. No solo es subir los codigos, tambien se deben capturar las imagenes que evidencian la correcta ejecución del código. **Promo**: Tres codigos valen 1.0.
+2. Bonus de 0.4 si se hace con otros lenguajes menos comunes como Go, C++ o Rust. **Promo**: Dos codigos valen 1.0.
+
+
+
+
