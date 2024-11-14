@@ -2,13 +2,19 @@
 
 Los ejemplos que se implementaron son los que se encuentran en la sección [threads-intro](../../threads-intro/)
 
+## Referencias principales
+
 Para la implementación se tomo como base los ejemplos de la siguiente paginas:
 * **An Intro to Threading in Python** [[link]](https://realpython.com/intro-to-python-threading/)
 * **Python Command-Line Arguments** [[link]](https://realpython.com/python-command-line-arguments/)
 
 ## Ejemplos
 
-### Ejemplo 1
+Los códigos a reimplementar:
+- [x] `t0.c`
+- [ ] `t1.c`
+
+### Código `t0` 
 
 #### Codigos
 
@@ -120,8 +126,7 @@ Para la implementación se tomo como base los ejemplos de la siguiente paginas:
 
     ![salida_t0_c_out2](salida_t0_python_out2.png)
 
-
-### Ejemplo 2
+### Código `t1`
 
 * **Codigo original**: [t1.c](../c/t1.c)
 
