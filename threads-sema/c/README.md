@@ -1,75 +1,65 @@
+# Semaphores
 
+> **Original**: Los siguientes codigos son tomados del directiorio [threads-sema](https://github.com/remzi-arpacidusseau/ostep-code/tree/master/threads-sema) del [repositorio](https://github.com/remzi-arpacidusseau/ostep-code/tree/master) de ejemplos del libro de Remzi.
 
+Los ejemplos de codigo del capitulo **Semaphores** ([threads-sema.pdf](https://pages.cs.wisc.edu/~remzi/OSTEP/threads-sema.pdf)) son mostrados a continuación. Compile los códigos mediante el comando `make`; luego, corra el ejecutable resultante para ver como funciona.
 
-# Fork/Join
+## Fork/Join
 
-Simple example of the fork/join (i.e., waiting for a child) problem
-using semaphores, found in `join.c`.
+El ejemplo `join.c` muestra la implementación de un problema **`fork/join`** (i.e., esperar por un hijo) udando semaforos 
 
-Run `make` to build the code; run `join` to test it. Fun!
+Ejecute el comando `make` para compilar el codigo; luego llame al ejecutable `join` para ver como funciona:
 
 ```sh
 prompt> make
 prompt> ./join
 ```
 
+## Binary Semaphores (Locks)
 
-# Binary Semaphores (Locks)
+El ejemplo `binary.c` como se implementa **`locks`** (semaforos binarios) mediante el uso de semaforos.  
 
-Simple example of semaphores as locks (binary semaphores).
-Code in `binary.c`.
-
-Run `make` to build the code; run `binary` to test it. Fun!
+Ejecute el comando `make` para compilar el codigo; luego llame al ejecutable `binary` para ver como funciona:
 
 ```sh
 prompt> make
 prompt> ./binary
 ```
 
-# Producer/Consumer
+## Producer/Consumer
 
-Code for the working producer/consumer solution from the text,
-found in `producer_consumer.c`.
+El código con la solución correcta del problema del **`producer/consumer`** se implementa en el archivo `producer_consumer.c`.
 
-Run `make` to build, and `producer_consumer` to test it.
-The program takes a few different arguments:
-- The number of buffers between the producer/consumer
-- The number of times a producer should produce something
-- The number of consumer threads
+Ejecute el comando `make` para compilarlo y luego llame el ejecutable `producer_consumer` para probarlo. El programa la entrada de diferentes argumentos:
+- Tamaño del buffer entre productor y consumidor.
+- Cantidad de veces que el productor deberia poner algo en el buffer (produce).
+- Numero de hilos consumidores.
 
 ```sh
 prompt> make
 prompt> ./producer_consumer 1 1000 1
 ```
 
-The output should print each produced item once, and show which
-consumer consumed each produced item.
+La salida deberia imprimir cada item producido una vez mostrando cual consumidor consume el item (de los previamente producidos) fue el obtenido.
 
 # Reader/Writer Locks
 
-Code in `rwlock.c`. Build via `make`, run via `rwlock`.
+El codido se implementa en `rwlock.c`. Use el comando `make` para compilar y ejecute el archivo ejecutable resultante por medio de `rwlock`.
 
-# Dining Philosophers
+## Dining Philosophers
 
-The dining philosophers example from the text is found herein, in a few
-different forms:
-- `dining_philosophers_deadlock.c`: code with deadlock
-- `dining_philosophers_deadlock_print.c`: code with deadlock, and some useful printing
-- `dining_philosophers_no_deadlock.c`: code without deadlock
-- `dining_philosophers_no_deadlock_print.c`: code without deadlock, and some useful printing
+El problema de la cena de filosofos se encuentra implementado de diferentes maneras:
+- `dining_philosophers_deadlock.c`: Codigo que se bloquea.
+- `dining_philosophers_deadlock_print.c`: Codigo que se bloquea, pero que muestra la salida en pantalla para para propositos didacticos y de depuración.
+- `dining_philosophers_no_deadlock.c`: Codigo que no se bloquea.
+- `dining_philosophers_no_deadlock_print.c`: Codigo que no se bloquea, pero que muestra la salida en pantalla para para propositos didacticos y de depuración.
 
-Run `make` to build all of them with the highly primitive `Makefile`.
+Ejecute el comando  `make` obtener todos los ejecutables a partir del `Makefile`.
 
+## Zemaphores
 
-# Zemaphores
-
-Code in `zemaphore.c`. We bet you can figure out the rest. This is just
-a small test of the Zemaphore with the fork/join problem.
-
+Código en `zemaphore.c`. Esto es sólo una pequeña prueba del Zemaphore con el problema de **`fork/join`**.
 
 # Throttle
 
-Bonus code that shows how semaphores can be used to throttle how 
-many different threads run through a certain bit of code at a time.
-Code in `throttle.c`. 
-
+Código **bonus** que muestra cómo los semáforos se pueden estrangular al ejecutar  a la vez en un determinado fragmento de código. Código en `throttle.c`. 
