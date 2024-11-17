@@ -14,8 +14,8 @@ En la siguiente tabla se marca con una **`X`** el nombre del ejemplo implementad
 
 |#|Ejemplo|C|Python|Java|C++|Rust|Go|
 |---|---|---|---|---|---|---|---|
-|1|`thread_create`|X||||||
-|2|`thread_create_with_return_args`|X||||||
-|3|`thread_create_simple_args`|X||||||
+|1|`thread_create`|X||||X||
+|2|`thread_create_with_return_args`|X||||X||
+|3|`thread_create_simple_args`|X||||X||
 
 > **Nota**: Los nombres de los archivos tendran el mismo titulo del ejemplo, lo unico que los diferenciara es la extención asociada al lenguaje de programación en el que se implemtenta.
