@@ -57,4 +57,9 @@ Coloque las capturas de pantalla donde se evidencia el correcto funcionamiento d
 
 ## Referencias
 
-Coloque aqui referencias de utilidad.
+1. **Hilos en Python**  
+   [Cómo usar hilos o threads en Python - Código Pitón](https://www.codigopiton.com/como-usar-hilos-o-threads-en-python/)
+
+2. **Libros sobre Sistemas Operativos y Concurrencia**  
+   "Operating Systems: Three Easy Pieces" por Remzi H. Arpaci-Dusseau y Andrea C. Arpaci-Dusseau.  
+   [Sitio oficial](http://pages.cs.wisc.edu/~remzi/OSTEP/)
