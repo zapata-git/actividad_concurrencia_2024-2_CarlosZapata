@@ -126,7 +126,7 @@ if __name__ == "__main__":
 ### Instalación
 ```bash
 # Clonar repositorio
-git clone https://github.com/tuusuario/threading-python.git
+git clone https://github.com/zapata-git/actividad_concurrencia_2024-2_CarlosZapata.git
 
 # Instalar dependencias
 pip install tqdm
@@ -159,4 +159,4 @@ Número 2: 20
 Este ejemplo ilustra conceptos básicos de threading en Python, mostrando cómo crear hilos, simular procesamiento y visualizar progreso.
 
 ## Licencia
-Proyecto de código abierto. Consultar archivo de licencia para detalles.
+Proyecto de código abierto.
