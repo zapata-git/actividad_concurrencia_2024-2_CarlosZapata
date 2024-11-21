@@ -3,5 +3,9 @@
 version = 3
 
 [[package]]
+name = "join_no_lock"
+version = "0.1.0"
+
+[[package]]
 name = "join_spin"
 version = "0.1.0"
