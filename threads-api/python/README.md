@@ -22,7 +22,7 @@ Los códigos a reimplementar:
 # Hilos en Python con Barra de Progreso
 
 ## Descripción
-Este proyecto implementa un programa en Python que utiliza hilos (`threading`) y una barra de progreso (`tqdm`) para simular el procesamiento de tareas. El programa incluye una interfaz interactiva en la terminal y personalización visual, como una barra de progreso verde.
+Este proyecto implementa un programa en Python que utiliza hilos (`threading`) y una barra de progreso (`tqdm`) para simular el procesamiento de tareas. El programa incluye una interfaz interactiva en la terminal y personalización visual.
 
 # Explicación del Código
 
