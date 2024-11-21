@@ -18,7 +18,7 @@ Este proyecto demuestra la implementación de programación concurrente utilizan
 - [ ] `thread_create_simple_args.c`
 - [ ] `thread_create_with_return_args.c`
 
-## Código Fuente Comentado
+## Código Fuente
 
 ```python
 # Importación de librerías necesarias
