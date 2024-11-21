@@ -1,0 +1,7 @@
+[workspace]
+
+members = [
+	"join_spin",
+	"join_no_lock",
+]
+resolver = "2"
