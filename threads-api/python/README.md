@@ -24,14 +24,23 @@ Los códigos a reimplementar:
 ## Descripción
 Este proyecto implementa un programa en Python que utiliza hilos (`threading`) y una barra de progreso (`tqdm`) para simular el procesamiento de tareas. El programa incluye una interfaz interactiva en la terminal y personalización visual, como una barra de progreso verde.
 
-## Requisitos
-Antes de ejecutar el programa, asegúrate de tener Python instalado en tu sistema y la biblioteca `tqdm`. Si no tienes `tqdm`, instálalo con el siguiente comando:
+# Explicación del Código
 
-```bash
-pip install tqdm
-## Ejecucion
+Cómo Ejecutar
 
-Coloque las capturas de pantalla donde se evidencia el correcto funcionamiento de su código. 
+Clona este repositorio en tu máquina local:
+
+bashCopygit clone https://github.com/tu-usuario/tu-repositorio.git
+
+Accede a la carpeta del proyecto:
+
+bashCopycd tu-repositorio
+
+Ejecuta el programa:
+
+bashCopypython hilos_barra.py
+
+Sigue las instrucciones en pantalla para ingresar los números y ver el progreso del hilo.
 
 
 ## Referencias
