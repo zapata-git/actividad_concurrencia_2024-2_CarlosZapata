@@ -11,7 +11,7 @@ Un proyecto educativo que demuestra la implementación de programación concurre
 Este proyecto implementa un gestor de descargas concurrente para demostrar conceptos prácticos de threading en Python, permitiendo ejecutar y monitorear múltiples descargas simultáneas con seguimiento en tiempo real.
 
 ### Reimplementación de Códigos
-- ✅ `thread_create.c`
+- ⏳  `thread_create.c`
 - ✅ `thread_create_simple_args.c`
 - ✅ `thread_create_with_return_args.c`
 
