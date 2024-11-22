@@ -52,23 +52,6 @@ Ejecutar el gestor de descargas:
 ```bash
 python download_manager.py
 ```
-
-### Ejemplo de Salida
-
-```
-🚀 Iniciando descarga 1
-🚀 Iniciando descarga 2
-🚀 Iniciando descarga 3
-⬇️ Descarga 1: 25.5% completado
-⬇️ Descarga 2: 15.3% completado
-⬇️ Descarga 3: 18.7% completado
-...
-✅ Descarga 1 completada!
-❌ Descarga 2 cancelada
-❌ Descarga 3 cancelada
-Todas las descargas finalizadas
-```
-
 ## 🏗️ Arquitectura del Proyecto
 
 ### Clase DownloadManager
@@ -111,6 +94,22 @@ def start_multiple_downloads(self, num_downloads):
 - Implementación de hilos
 - Sincronización entre procesos
 - Control de ciclo de vida
+
+### Ejemplo de Salida
+
+```
+🚀 Iniciando descarga 1
+🚀 Iniciando descarga 2
+🚀 Iniciando descarga 3
+⬇️ Descarga 1: 25.5% completado
+⬇️ Descarga 2: 15.3% completado
+⬇️ Descarga 3: 18.7% completado
+...
+✅ Descarga 1 completada!
+❌ Descarga 2 cancelada
+❌ Descarga 3 cancelada
+Todas las descargas finalizadas
+```
 
 
 ## 📖 Referencias
