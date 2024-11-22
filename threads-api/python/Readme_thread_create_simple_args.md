@@ -1,4 +1,4 @@
-# Implementación de Concurrencia en Python
+# 🧵 Implementación de Concurrencia en Python
 
 [![Licencia MIT](https://img.shields.io/badge/Licencia-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![Python Version](https://img.shields.io/badge/python-3.x-blue.svg)](https://www.python.org/downloads/)
@@ -9,6 +9,11 @@ Un proyecto educativo que demuestra la implementación de programación concurre
 ## 🎯 Objetivo del Proyecto
 
 Este proyecto implementa un gestor de descargas concurrente para demostrar conceptos prácticos de threading en Python, permitiendo ejecutar y monitorear múltiples descargas simultáneas con seguimiento en tiempo real.
+
+### Reimplementación de Códigos
+- ✅ `thread_create.c`
+- ✅ `thread_create_simple_args.c`
+- ✅ `thread_create_with_return_args.c`
 
 ## 🚀 Características Principales
 
@@ -107,10 +112,6 @@ def start_multiple_downloads(self, num_downloads):
 - Sincronización entre procesos
 - Control de ciclo de vida
 
-### 3. Patrones de Diseño
-- Sistema de cola para gestión de tareas
-- Control centralizado de cancelación
-- Monitoreo en tiempo real
 
 ## 📖 Referencias
 
@@ -132,9 +133,6 @@ Las contribuciones son bienvenidas. Para contribuir:
 4. Push a la rama (`git push origin feature/NuevaCaracteristica`)
 5. Abre un Pull Request
 
-## 📝 Licencia
-
-Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para más detalles.
 
 ## ✉️ Contacto
 
