@@ -38,49 +38,152 @@ cd actividad_concurrencia_2024-2_CarlosZapata
 pip install tqdm
 ```
 
-## 💻 Código Fuente Comentado
+## 💻 Código Fuente 
 
+### Importaciones y Dependencias
 ```python
+# Threading: Módulo fundamental para la creación y gestión de hilos en Python
 import threading
-import time
-from tqdm import tqdm
 
+# Time: Módulo para manejo de tiempos y delays
+import time
+
+# TQDM: Librería para crear barras de progreso visuales e interactivas
+from tqdm import tqdm
+```
+
+### Implementación del Hilo Principal
+```python
 def mythread(args, thread_id):
     """
-    Función principal del hilo que procesa argumentos y muestra progreso
+    Función principal que ejecuta la lógica del hilo y muestra el progreso de ejecución.
     
     Args:
-        args (tuple): Tupla con dos valores numéricos
-        thread_id (int): Identificador único del hilo
+        args (tuple): Tupla conteniendo dos valores numéricos para procesamiento
+        thread_id (int): Identificador único del hilo para seguimiento
+    
+    Comportamiento:
+        1. Desempaqueta los argumentos recibidos
+        2. Simula procesamiento con barra de progreso
+        3. Reporta el estado inicial y final del hilo
+        4. Muestra los valores procesados
     """
+    # Desempaquetado de argumentos mediante destructuring
     a, b = args
+    
+    # Notificación de inicio del hilo con formato consistente
     print(f"\n[Hilo {thread_id}] Iniciando...")
     
-    for i in tqdm(range(10), desc=f"[Hilo {thread_id}] Procesando", unit="tarea"):
+    # Simulación de procesamiento con barra de progreso
+    for i in tqdm(
+        range(10),                           # 10 iteraciones de proceso
+        desc=f"[Hilo {thread_id}] Procesando", # Descripción en la barra
+        unit="tarea"                         # Unidad de medida del progreso
+    ):
+        # Pausa de 500ms para simular trabajo real
         time.sleep(0.5)
     
+    # Reporte de valores procesados
     print(f"\n[Hilo {thread_id}] Valores recibidos: {a} {b}")
+    
+    # Notificación de finalización del hilo
     print(f"[Hilo {thread_id}] Finalizando...\n")
+```
 
+### Punto de Entrada y Control Principal
+```python
 if __name__ == "__main__":
+    """
+    Punto de entrada principal del programa.
+    Gestiona la creación, ejecución y finalización del hilo.
+    """
+    # Banner de inicio del programa
     print("=== Programa de Ejemplo con Hilos y Barra de Progreso ===")
     
+    # Recolección de datos de entrada
     print("Ingrese dos números para el hilo:")
-    a = int(input("Número 1: "))
-    b = int(input("Número 2: "))
+    a = int(input("Número 1: "))  # Conversión explícita a entero
+    b = int(input("Número 2: "))  # Manejo básico de entrada
     
+    # Empaquetado de argumentos en tupla para paso al hilo
     args = (a, b)
-    thread_id = 1
+    thread_id = 1  # Identificador único del hilo
     
-    thread = threading.Thread(target=mythread, args=(args, thread_id))
+    # Creación del objeto Thread
+    thread = threading.Thread(
+        target=mythread,    # Función que ejecutará el hilo
+        args=(args, thread_id)  # Argumentos pasados a la función
+    )
+    
+    # Notificación de creación del hilo
     print(f"\n[Principal] Creando el hilo {thread_id}...")
     
+    # Inicio de la ejecución del hilo
     thread.start()
     print(f"[Principal] Hilo {thread_id} iniciado.\n")
     
-    thread.join()
+    # Espera por la finalización del hilo
+    thread.join()  # Bloquea hasta que el hilo termine
+    
+    # Notificación de finalización del programa
     print("[Principal] Hilo finalizado. ¡Todo listo!\n")
 ```
+
+### 🔍 Detalles Técnicos Importantes
+
+#### 1. Gestión de Hilos
+- **Creación**: Utiliza `threading.Thread()` con parámetros nombrados
+- **Ejecución**: Implementa `start()` para iniciar el hilo
+- **Sincronización**: Usa `join()` para esperar finalización
+
+#### 2. Estructura de Datos
+- **Tuplas**: Empaquetado de argumentos inmutable
+- **Identificadores**: Sistema de tracking con IDs únicos
+- **Estados**: Mensajes formatados con contexto del hilo
+
+#### 3. Visualización de Progreso
+- **TQDM**: Barra de progreso interactiva
+- **Formato**: Consistente con prefijos `[Hilo X]`
+- **Temporización**: Delays controlados con `time.sleep()`
+
+### 🔧 Características Técnicas
+
+1. **Seguridad de Tipos**
+   - Conversión explícita de entradas a `int`
+   - Tuplas inmutables para argumentos
+   - Identificadores numéricos para seguimiento
+
+2. **Manejo de Estados**
+   - Mensajes de estado claros y consistentes
+   - Seguimiento del ciclo de vida del hilo
+   - Notificaciones en puntos clave de ejecución
+
+3. **Visualización**
+   - Barra de progreso interactiva con TQDM
+   - Formato consistente en mensajes
+   - Claridad en la separación de outputs
+
+4. **Sincronización**
+   - Control de ejecución con `start()`
+   - Espera sincronizada con `join()`
+   - Simulación realista con `sleep()`
+
+### 📊 Flujo de Ejecución
+
+1. **Inicialización**
+   ```
+   Programa → Entrada de datos → Creación de hilo
+   ```
+
+2. **Ejecución**
+   ```
+   Inicio de hilo → Procesamiento con barra → Reporte de valores
+   ```
+
+3. **Finalización**
+   ```
+   Término de proceso → Join del hilo → Mensaje de finalización
+   ```
 
 ## 🚀 Uso y Ejecución
 
