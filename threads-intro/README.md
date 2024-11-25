@@ -15,7 +15,7 @@ En la siguiente tabla se marca con una **`X`** el nombre del ejemplo implementad
 
 | #   | Ejemplo | C   | Python | Java | C++ | Rust | Go  |
 | --- | ------- | --- | ------ | ---- | --- | ---- | --- |
-| 1   | `t0`    | X   | X      |      |     | X    |     |
+| 1   | `t0`    | X   | X      | X    |     | X    |     |
 | 2   | `t1`    | X   |        |      |     | X    |     |
 
 > **Nota**: Los nombres de los archivos tendran el mismo titulo del ejemplo, lo unico que los diferenciara es la extención asociada al lenguaje de programación en el que se implemtenta.
