@@ -1,22 +1,3 @@
-# Implementación en Java
-
-Los ejemplos que se implementaron son los que se encuentran en la sección [threads-intro](../../threads-intro/)
-
-## Referencias principales
-
-Coloque aqui las paginas donde encontro los ejemplos que mas le sirvieron para arrancar
-
-## Ejemplos
-
-Los códigos a reimplementar:
-- [x] `t0.c`
-- [ ] `t1.c`
-
-## Codigos
-
-Coloque aqui los codigos en el lenguaje de su elección
-
-```c
 public class t0 {
 
     // Clase que implementa la lógica del hilo
@@ -62,42 +43,3 @@ public class t0 {
     }
 }
 
-
-```
-
-```cpp
-// code
-// ...
-```
-
-
-```python
-# Code
-# ...
-```
-
-
-```java
-// Code
-// ...
-```
-
-
-```go
-// Code
-// ...
-```
-
-```rust
-// Code
-// ...
-```
-
-## Ejecucion
-
-![image](https://github.com/user-attachments/assets/3d7f7d04-e578-43fb-9444-b70d8b3e844e)
-
-
-## Referencias
-
-Coloque aqui referencias de utilidad.
