@@ -5,16 +5,17 @@
 [![Plataformas](https://img.shields.io/badge/Plataformas-Linux%20%7C%20macOS%20%7C%20Windows-orange.svg)]()
 ### 📂 Códigos a Reimplementar:  
 
-- ✅ `join.c`  
-- 🔴 `binary.c`  
-- ✅ `producer_consumer.c`  
-- ✅ `rwlock.c`  
-- ✅ `dining_philosophers_deadlock.c`  
-- ✅ `dining_philosophers_deadlock_print.c`  
-- ✅ `dining_philosophers_no_deadlock.c`  
-- ✅ `dining_philosophers_no_deadlock_print.c`  
-- ✅ `zemaphore.c`  
-- ✅ `throttle.c`
+- ⏳ `join.c`  
+- ✅ `binary.c`  
+- ⏳ `producer_consumer.c`  
+- ⏳ `rwlock.c`  
+- ⏳ `dining_philosophers_deadlock.c`  
+- ⏳ `dining_philosophers_deadlock_print.c`  
+- ⏳ `dining_philosophers_no_deadlock.c`  
+- ⏳ `dining_philosophers_no_deadlock_print.c`  
+- ⏳ `zemaphore.c`  
+- ⏳ `throttle.c`
+
 
 
 ## 🎯 Descripción General
