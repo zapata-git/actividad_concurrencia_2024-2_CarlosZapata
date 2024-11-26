@@ -6,12 +6,14 @@
 
 ## 🎯 Descripción General
 🎯 Descripción General
-Este proyecto demuestra el uso de semáforos para sincronizar el acceso a una variable compartida entre múltiples hilos en un programa concurrente escrito en Go. El objetivo es incremental un contador de manera segura, evitando condiciones de carrera que podrían llevar a resultados erróneos.
-En un entorno concurrente, donde múltiples hilos de ejecución (goroutines en Go) acceden a recursos compartidos, es fundamental utilizar mecanismos de sincronización adecuados para prevenir problemas como las condiciones de carrera. En este ejemplo, se emplea un semáforo (mutex) para controlar el acceso al contador compartido.
-Los semáforos son una primitiva de sincronización que permiten regular el acceso a secciones críticas del código, donde solo una unidad de ejecución (hilo) puede modificar los datos en un momento dado. Al bloquear y desbloquear el semáforo, se garantiza que el incremento del contador se realice de manera atómica y segura, evitando que los hilos interfieran entre sí.
-En el programa, se crean dos goroutines que incrementan el mismo contador 10 millones de veces. Cada goroutine adquiere el bloqueo del semáforo antes de modificar el contador, y lo libera una vez finalizada la operación. Esto asegura que solo una goroutine pueda acceder al contador en un momento determinado, previniendo condiciones de carrera.
-Sin embargo, el resultado observado muestra que el valor final del contador es incorrecto, lo que indica que hay un problema en la implementación del mecanismo de sincronización que debe ser identificado y corregido.
-Este ejemplo ilustra los conceptos fundamentales de la concurrencia y la sincronización de hilos utilizando semáforos en Go, y cómo prevenir condiciones de carrera al acceder a recursos compartidos.
+    Este proyecto demuestra el uso de semáforos para sincronizar el acceso a una variable compartida entre múltiples hilos en un programa concurrente escrito en Go. El         objetivo es incremental un contador de manera segura, evitando condiciones de carrera que podrían llevar a resultados erróneos.
+
+    En un entorno concurrente, donde múltiples hilos de ejecución (goroutines en Go) acceden a recursos compartidos, es fundamental utilizar mecanismos de sincronización adecuados para prevenir problemas como las condiciones de carrera. En este ejemplo, se emplea un semáforo (mutex) para controlar el acceso al contador compartido.
+    Los semáforos son una primitiva de sincronización que permiten regular el acceso a secciones críticas del código, donde solo una unidad de ejecución (hilo) puede modificar los datos en un momento dado. Al bloquear y desbloquear el semáforo, se garantiza que el incremento del contador se realice de manera atómica y segura, evitando que los hilos interfieran entre sí.
+
+    En el programa, se crean dos goroutines que incrementan el mismo contador 10 millones de veces. Cada goroutine adquiere el bloqueo del semáforo antes de modificar el contador, y lo libera una vez finalizada la operación. Esto asegura que solo una goroutine pueda acceder al contador en un momento determinado, previniendo condiciones de carrera.
+    Sin embargo, el resultado observado muestra que el valor final del contador es incorrecto, lo que indica que hay un problema en la implementación del mecanismo de sincronización que debe ser identificado y corregido.
+    Este ejemplo ilustra los conceptos fundamentales de la concurrencia y la sincronización de hilos utilizando semáforos en Go, y cómo prevenir condiciones de carrera al acceder a recursos compartidos.
 
 
 ## 💻 Código Fuente 
