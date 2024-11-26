@@ -1,164 +1,111 @@
-# 🧵 Sincronización de Hilos con Semáforos en C
+# 🧵 Sincronización de Goroutines con Mutex en Go
 
 [![Licencia MIT](https://img.shields.io/badge/Licencia-MIT-green.svg)](https://opensource.org/licenses/MIT)
-[![C Version](https://img.shields.io/badge/C-11-blue.svg)](https://en.cppreference.com/w/c/11)
-[![Plataformas](https://img.shields.io/badge/Plataformas-Linux%20%7C%20macOS-orange.svg)]()
+[![Go Version](https://img.shields.io/badge/Go-1.16+-blue.svg)](https://golang.org/)
+[![Plataformas](https://img.shields.io/badge/Plataformas-Linux%20%7C%20macOS%20%7C%20Windows-orange.svg)]()
 
 ## 🎯 Descripción General
-Este proyecto demuestra la sincronización de hilos utilizando semáforos en C, con un ejemplo práctico de acceso seguro a una variable compartida.
+Demostración de sincronización concurrente en Go utilizando mutex para prevenir condiciones de carrera al incrementar un contador compartido.
 
-## 📋 Estado de Implementación
-- ✅ Sincronización con semáforos
-- ✅ Incremento concurrente de contador
-- ✅ Soporte multiplataforma (Linux/macOS)
+## 💻 Código Fuente Comentado
 
-Los códigos a reimplementar:
+```go
+package main
 
-- [ ] `join.c`
-- [x] `binary.c`
-  - Este código demuestra la creación de un solo hilo binario que imprime el número binario de 0 a 31.
-- [ ] `producer_consumer.c`
-- [ ] `rwlock.c`
-- [ ] `dining_philosophers_deadlock.c`
-- [ ] `dining_philosophers_deadlock_print.c`
-- [ ] `dining_philosophers_no_deadlock.c`
-- [ ] `dining_philosophers_no_deadlock_print.c`
-- [ ] `zemaphore.c`
-- [ ] `throttle.c`
+import (
+    "fmt"      // Paquete para formatear e imprimir texto
+    "sync"     // Proporciona primitivas de sincronización
+    "time"     // Manejo de operaciones temporales
+)
 
-## 🛠️ Prerrequisitos
+// Variables globales compartidas
+var (
+    counter int           // Contador que será incrementado concurrentemente
+    mutex   sync.Mutex    // Mutex para sincronizar el acceso al contador
+)
 
-### Dependencias del Sistema
-- Compilador GCC o Clang
-- Biblioteca pthread
-- Biblioteca semaphore.h (en Linux)
+// Función que será ejecutada por cada goroutine
+func child(wg *sync.WaitGroup, id int) {
+    // Asegura que se llame a wg.Done() cuando la función termine
+    defer wg.Done()
 
-### Instalación de Dependencias
+    // Cada goroutine incrementa el contador 10 millones de veces
+    for i := 0; i < 10000000; i++ {
+        // Bloquea el mutex antes de modificar el contador
+        // Esto previene condiciones de carrera
+        mutex.Lock()
+        
+        // Incrementa el contador de manera segura
+        counter++
+        
+        // Imprime el estado cada millón de incrementos
+        if counter%1000000 == 0 {
+            fmt.Printf("Goroutine %d: counter = %d\n", id, counter)
+        }
+        
+        // Desbloquea el mutex para permitir que otras goroutines accedan
+        mutex.Unlock()
+        
+        // Simula un pequeño retraso para mostrar comportamiento concurrente
+        // Hace que cada goroutine "ceda" brevemente
+        time.Sleep(1 * time.Millisecond)
+    }
+}
 
-#### En Ubuntu/Debian
-```bash
-sudo apt-get update
-sudo apt-get install build-essential libc6-dev
+func main() {
+    // Crea un WaitGroup para sincronizar la finalización de goroutines
+    var wg sync.WaitGroup
+    
+    // Indica que esperaremos 2 goroutines
+    wg.Add(2)
+    
+    // Lanza dos goroutines que ejecutarán la función child
+    // Cada una con un ID único
+    go child(&wg, 1)
+    go child(&wg, 2)
+    
+    // Espera hasta que ambas goroutines completen su trabajo
+    wg.Wait()
+    
+    // Imprime el resultado final del contador
+    fmt.Printf("Final result: %d (should be 20000000)\n", counter)
+}
 ```
 
-#### En macOS
-```bash
-xcode-select --install
-```
-
-## 💻 Código Fuente
-
-### Componentes Principales
-- **Bibliotecas Utilizadas**
-  - `<stdio.h>`: Entrada/salida estándar
-  - `<stdlib.h>`: Funciones estándar de sistema
-  - `<pthread.h>`: Gestión de hilos
-  - `<unistd.h>`: Funciones del sistema Unix
-  - `<semaphore.h>`: Semáforos (plataforma dependiente)
+## 🔍 Explicación Detallada
 
 ### Conceptos Clave
-1. **Semáforos**
-   - Mecanismo de sincronización
-   - Control de acceso a sección crítica
-   - Prevención de condiciones de carrera
+1. **Mutex (Exclusión Mutua)**
+   - Previene que múltiples goroutines accedan simultáneamente a la sección crítica
+   - `mutex.Lock()` bloquea el acceso
+   - `mutex.Unlock()` libera el acceso
 
-2. **Variables Compartidas**
-   - Uso de `volatile` para prevenir optimizaciones
-   - Acceso sincronizado mediante semáforos
+2. **WaitGroup**
+   - Sincroniza la finalización de múltiples goroutines
+   - `wg.Add(n)` establece el contador de goroutines
+   - `wg.Done()` marca una goroutine como completada
+   - `wg.Wait()` espera hasta que todas las goroutines terminen
 
-## 🚀 Compilación y Ejecución
+3. **Concurrencia**
+   - Dos goroutines incrementan el mismo contador
+   - `time.Sleep()` simula trabajo y muestra interleaving
 
-### Compilación
-```bash
-# Para Linux
-gcc -pthread thread_sync.c -o thread_sync
+## 🧪 Análisis de Comportamiento
 
-# Para macOS
-gcc -pthread thread_sync.c -o thread_sync
-```
+- **Objetivo**: Incrementar un contador compartido de manera segura
+- **Resultado Esperado**: 20,000,000 (10,000,000 * 2 goroutines)
+- **Problema Resuelto**: Condiciones de carrera
 
-### Ejecución
-```bash
-./thread_sync
-```
+## Resultado de la Ejecución
 
-## 🔍 Detalles Técnicos
+La imagen muestra la salida del programa en la terminal. Podemos ver que el resultado final del contador es "2000000000" en lugar del valor esperado de "20000000". Esto indica que hay un problema en la implementación que debe ser revisado y corregido.
 
-### Flujo de Ejecución
-1. Inicialización de semáforo
-2. Creación de dos hilos
-3. Cada hilo incrementa contador 10,000,000 veces
-4. Sincronización mediante semáforo
-5. Impresión de resultado final
-
-### Consideraciones de Sincronización
-- Semáforo binario (`mutex`)
-- Sección crítica protegida
-- Incremento seguro de variable compartida
-
-## 📊 Características de Implementación
-
-### 1. Multiplataforma
-- Soporte para Linux
-- Soporte para macOS con implementación personalizada
-- Uso condicional de bibliotecas
-
-### 2. Gestión de Concurrencia
-- Control de acceso a recursos
-- Prevención de condiciones de carrera
-- Sincronización precisa
-
-## 🧪 Análisis de Resultados
-
-### Comportamiento Esperado
-- Valor final del contador: 20,000,000
-- Sin datos corruptos o condiciones de carrera
-
-### Posibles Variaciones
-- Número de hilos
-- Cantidad de incrementos
-- Estrategias de sincronización
-
-## 📚 Conceptos Fundamentales
-
-### Concurrencia
-- Ejecución simultánea de múltiples hilos
-- Gestión de recursos compartidos
-- Sincronización de procesos
-
-### Semáforos
-- Mecanismo de señalización
-- Control de acceso
-- Prevención de conflictos
-
-## 📖 Referencias Técnicas
-
-### Bibliografía Recomendada
-- 📘 "Modern Operating Systems" - Andrew S. Tanenbaum
-- 📘 "Advanced Programming in the UNIX Environment" - W. Richard Stevens
-
-### Documentación
-- [POSIX Threads Programming](https://computing.llnl.gov/tutorials/pthreads/)
-- [Semaphore Reference](https://linux.die.net/man/3/sem_init)
-
-## 🤝 Contribución
-
-1. Fork del repositorio
-2. Crea rama para tu feature (`git checkout -b feature/mejora-concurrencia`)
-3. Commit de cambios (`git commit -m 'Mejora: Sincronización de Hilos'`)
-4. Push a la rama (`git push origin feature/mejora-concurrencia`)
-5. Abre un Pull Request
+![Resultado de la ejecución](https://raw.githubusercontent.com/zapata-git/actividad_concurrencia_2024-2_CarlosZapata/main/result.png)
 
 ## ✉️ Contacto
-
 Carlos Zapata Arango
 - GitHub: [@zapata-git](https://github.com/zapata-git)
 - Repositorio: [actividad_concurrencia_2024-2_CarlosZapata](https://github.com/zapata-git/actividad_concurrencia_2024-2_CarlosZapata)
-
-![Resultado final](https://raw.githubusercontent.com/zapata-git/actividad_concurrencia_2024-2_CarlosZapata/main/result.png)
-
-## Ejemplos
-
 
 ---
 © 2024 Carlos Zapata Arango. Todos los derechos reservados.
