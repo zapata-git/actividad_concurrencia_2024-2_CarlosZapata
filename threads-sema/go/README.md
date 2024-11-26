@@ -139,7 +139,7 @@ func main() {
 
 ## Resultado de la Ejecución
 
-La imagen muestra la salida del programa en la terminal. Podemos ver que el resultado final del contador es "2000000000" en lugar del valor esperado de "20000000". Esto indica que hay un problema en la implementación que debe ser revisado y corregido.
+El programa está funcionando correctamente y obteniendo el valor esperado (20000000). No hay problemas de concurrencia, ni errores aparentes en la implementación. 
 
 ![image](https://github.com/user-attachments/assets/8981773b-3fba-4325-af2e-4ab2527482ba)
 
