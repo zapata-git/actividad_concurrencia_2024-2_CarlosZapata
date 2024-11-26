@@ -146,8 +146,9 @@ La imagen muestra la salida del programa en la terminal. Podemos ver que el resu
 
 ## ✉️ Contacto
 Carlos Zapata Arango
-- GitHub: [@zapata-git](https://github.com/zapata-git)
-- Repositorio: [actividad_concurrencia_2024-2_CarlosZapata](https://github.com/zapata-git/actividad_concurrencia_2024-2_CarlosZapata)
+
+[![GitHub](https://img.shields.io/badge/GitHub-zapata--git-blue?style=for-the-badge&logo=github)](https://github.com/zapata-git)
+[![Repositorio](https://img.shields.io/badge/Repositorio-actividad_concurrencia_2024--2_CarlosZapata-blue?style=for-the-badge&logo=github)](https://github.com/zapata-git/actividad_concurrencia_2024-2_CarlosZapata)
 
 ---
 © 2024 Carlos Zapata Arango. Todos los derechos reservados.
